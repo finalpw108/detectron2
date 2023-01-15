@@ -167,5 +167,5 @@ if __name__ == "__main__":
         num_machines=1,
         machine_rank=0,
         dist_url="auto",
-        args=({},)
+        args=(args,),
     )

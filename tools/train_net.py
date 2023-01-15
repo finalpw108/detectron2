@@ -151,13 +151,21 @@ def main(args):
 
 
 if __name__ == "__main__":
-    args = default_argument_parser().parse_args()
-    print("Command Line Args:", args)
+#     args = default_argument_parser().parse_args()
+#     print("Command Line Args:", args)
+#     launch(
+#         main,
+#         args.num_gpus,
+#         num_machines=args.num_machines,
+#         machine_rank=args.machine_rank,
+#         dist_url=args.dist_url,
+#         args=(args,),
+#     )
     launch(
         main,
-        args.num_gpus,
-        num_machines=args.num_machines,
-        machine_rank=args.machine_rank,
-        dist_url=args.dist_url,
-        args=(args,),
+        num_gpus_per_machine=2,
+        num_machines=1,
+        machine_rank=0,
+        dist_url="auto",
+        args=({},)
     )

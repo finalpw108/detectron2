@@ -26,6 +26,7 @@ register_custom_datasets()
 
 def main(args):
     cfg = setup(args)
+    cfg.MODEL.WEIGHTS="/kaggle/input/model-now/model_0171999.pth"
     if args.eval_only:
         model = Trainer.build_model(cfg)
         DetectionCheckpointer(model, save_dir=cfg.OUTPUT_DIR).resume_or_load(

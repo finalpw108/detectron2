@@ -117,6 +117,7 @@ def setup(args):
     cfg.merge_from_file(args.config_file)
     cfg.merge_from_list(args.opts)
     cfg.freeze()
+    cfg.MODEL.WEIGHTS="/kaggle/input/model-now/model_0171999.pth"
     default_setup(cfg, args)
     return cfg
 

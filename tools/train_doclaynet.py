@@ -5,7 +5,7 @@ from detectron2.engine import (
     launch,
 )
 from detectron2.data.datasets.coco import load_coco_json, register_coco_instances
-from train_det import Trainer, setup
+from train_net import Trainer, setup
 
 
 def register_custom_datasets():

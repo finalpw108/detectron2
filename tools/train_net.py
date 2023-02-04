@@ -163,7 +163,7 @@ def train_multi_gpu():
     
 
 if __name__ == "__main__":
-#     args = default_argument_parser().parse_args()
+    args = default_argument_parser().parse_args()
 #     print("Command Line Args:", args)
 #     launch(
 #         main,
@@ -173,12 +173,12 @@ if __name__ == "__main__":
 #         dist_url=args.dist_url,
 #         args=(args,),
 #     )
-#     launch(
-#         main,
-#         num_gpus_per_machine=2,
-#         num_machines=1,
-#         machine_rank=0,
-#         dist_url="auto",
-#         args=(args,),
-#     )
-    train_multi_gpu()
+    launch(
+        main,
+        num_gpus_per_machine=2,
+        num_machines=1,
+        machine_rank=0,
+        dist_url="auto",
+        args=(args,),
+    )
+#     train_multi_gpu()

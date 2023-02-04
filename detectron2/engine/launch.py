@@ -27,7 +27,7 @@ def _find_free_port():
 def launch(
     main_func,
     # Should be num_processes_per_machine, but kept for compatibility.
-    num_gpus_per_machine,
+    num_gpus_per_machine=2,
     num_machines=1,
     machine_rank=0,
     dist_url=None,

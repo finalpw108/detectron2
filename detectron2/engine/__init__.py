@@ -2,7 +2,7 @@
 
 from .launch import *
 from .train_loop import *
-from .trainMultiGpu import *
+# from .trainMultiGpu import *
 
 __all__ = [k for k in globals().keys() if not k.startswith("_")]
 

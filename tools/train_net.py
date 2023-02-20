@@ -38,6 +38,22 @@ from detectron2.evaluation import (
 )
 from detectron2.modeling import GeneralizedRCNNWithTTA
 
+def register_custom_datasets():
+    # doclaynet dataset
+    DATASET_ROOT = "/kaggle/input/doclaynet/"
+    ANN_ROOT = os.path.join(DATASET_ROOT, "COCO")
+    TRAIN_PATH = os.path.join(DATASET_ROOT, "PNG")
+    VAL_PATH = os.path.join(DATASET_ROOT, "PNG")
+    TEST_PATH = os.path.join(DATASET_ROOT, "PNG")
+    TRAIN_JSON = os.path.join(ANN_ROOT, "train.json")
+    VAL_JSON = os.path.join(ANN_ROOT, "val.json")
+    TEST_JSON = os.path.join(ANN_ROOT, "test.json")
+    register_coco_instances("doclaynet_train", {}, TRAIN_JSON, TRAIN_PATH)
+    register_coco_instances("doclaynet_val", {}, VAL_JSON, VAL_PATH)
+    register_coco_instances("doclaynet_test", {}, TEST_JSON, TEST_PATH)
+
+register_custom_datasets()
+
 
 def build_evaluator(cfg, dataset_name, output_folder=None):
     """

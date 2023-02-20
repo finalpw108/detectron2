@@ -20,6 +20,7 @@ def register_custom_datasets():
     TEST_JSON = os.path.join(ANN_ROOT, "test.json")
     register_coco_instances("doclaynet_train", {}, TRAIN_JSON, TRAIN_PATH)
     register_coco_instances("doclaynet_val", {}, VAL_JSON, VAL_PATH)
+    register_coco_instances("doclaynet_test", {}, TEST_JSON, TEST_PATH)
 
 register_custom_datasets()
 
